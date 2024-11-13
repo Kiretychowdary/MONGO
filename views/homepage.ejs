@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+
+    <!-- Upload Form -->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="profileImage">Upload Image:</label>
+        <input type="file" id="profileImage" name="profileImage" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <hr>
+
+    <!-- Display Uploaded Images -->
+    <div>
+        <% images.forEach(image => { %>
+            <div>
+                <img src="<%= image.url %>" alt="Image" style="width: 200px; height: auto;">
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
